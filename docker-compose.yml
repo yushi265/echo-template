@@ -4,12 +4,12 @@ services:
     container_name: app
     build: # ビルドに使うDockerファイルのパス
       context: .
-      dockerfile: ./build/Dockerfile
+      dockerfile: ./build/go/Dockerfile
     volumes: # マウントディレクトリ
       - ./app:/go/src/app
     tty: true # コンテナの永続化
     env_file: # .envファイル
-      - ./build/.go_env
+      - ./build/go/.go_env
     environment:
       - TZ=Asia/Tokyo
     ports:
@@ -18,14 +18,14 @@ services:
       - mysql
 
   mysql:
-      image: mysql:latest
-      ports:
-        - "3306:3306"
-      volumes:
-        - "./build/mysql:/var/lib/mysql"
-      environment:
-        MYSQL_DATABASE: local
-        MYSQL_USER: user
-        MYSQL_PASSWORD: rootroot
-        MYSQL_ROOT_PASSWORD: rootroot
-      container_name: mysql
+    image: mysql:latest
+    ports:
+      - "3306:3306"
+    volumes:
+      - "./build/mysql:/var/lib/mysql"
+    environment:
+      MYSQL_DATABASE: local
+      MYSQL_USER: user
+      MYSQL_PASSWORD: rootroot
+      MYSQL_ROOT_PASSWORD: rootroot
+    container_name: mysql
