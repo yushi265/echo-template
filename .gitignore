@@ -1,3 +1,4 @@
 tmp/
 app/tmp/
 .vscode/
+api/postgres-data

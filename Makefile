@@ -1,5 +1,8 @@
+init:
+	docker compose up -d --build
+
 build:
-	docker-compose build
+	docker compose build
 
 up:
 	docker compose up -d
@@ -11,4 +14,4 @@ down:
 	docker compose down
 
 sql:
-	docker compose exec mysql mysql -u root -prootroot
+	docker compose exec db psql -U postgres -d echo
