@@ -1,4 +1,4 @@
-module github.com/yushi265/go-docker-template/app
+module github.com/yushi265/echo-template/app
 
 go 1.22
 
