@@ -26,8 +26,8 @@ services:
       POSTGRES_PASSWORD: pass
       POSTGRES_DB: echo
     volumes:
-      - ./api/postgres-data:/var/lib/postgresql/data
-      - ./api/DDL:/docker-entrypoint-initdb.d
+      - ./app/postgres-data:/var/lib/postgresql/data
+      - ./app/DDL:/docker-entrypoint-initdb.d
     ports:
       - "5432:5432"
 
